@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "target": "es2015",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "build",
+  },
+  "include": [
+    "src/**/*.ts",
+  ],
+  "exclude": [],
+}

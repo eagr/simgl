@@ -1,0 +1,28 @@
+{
+  "name": "simgl",
+  "version": "0.0.0",
+  "description": "simplified WebGL",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "esbuild src/index.ts --bundle --outfile=dist/index.js --target=es2016 --minify",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eagr/simgl.git"
+  },
+  "keywords": [
+    "webgl"
+  ],
+  "author": "Julian Eager",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eagr/simgl/issues"
+  },
+  "homepage": "https://github.com/eagr/simgl#readme",
+  "devDependencies": {
+    "esbuild": "^0.14.11",
+    "typescript": "^4.5.4",
+    "typescript-tslint-plugin": "^1.0.1"
+  }
+}
