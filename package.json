@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bundle": "esbuild src/index.ts --bundle --outfile=dist/index.js --target=es2016 --minify",
+    "loader": "node bin/loader.js",
     "watch": "tsc --watch"
   },
   "repository": {

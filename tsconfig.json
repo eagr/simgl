@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": [
       "es2017",
-      "dom"
+      "dom",
     ],
     "target": "es2015",
     "module": "commonjs",
@@ -22,6 +22,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "example/**/*.ts",
   ],
   "exclude": [],
 }

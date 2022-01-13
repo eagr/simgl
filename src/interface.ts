@@ -37,3 +37,5 @@ type SimProgramSpec = {
     elem?:any[],
     unif?:Record<string, any>,
 }
+
+type Model = Record<string, any[]>
