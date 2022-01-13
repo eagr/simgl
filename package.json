@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/eagr/simgl#readme",
   "devDependencies": {
+    "@types/node": "^16.11.19",
     "esbuild": "^0.14.11",
     "gl-matrix": "^3.4.3",
     "tslib": "^2.3.1",
