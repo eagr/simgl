@@ -1,12 +1,4 @@
-function getLine (s:string, p:number) : string {
-    const eol = s.indexOf('\n', p)
-    const ln = s.substring(p, eol + 1)
-    return ln
-}
-
 enum OBJ_DATA_TYPE {
-    COMMENT = '#',
-
     VERTEX = 'v',
     TEXTURE_VERTEX = 'vt',
     VERTEX_NORMAL = 'vn',
@@ -16,35 +8,32 @@ enum OBJ_DATA_TYPE {
     FACE = 'f',
 }
 
-export function parseObj (data:string, vp:string, fp:string) : any {
-    const parsed:Model = {
-        [vp]: [],
-        [fp]: [],
-    }
+function toInt (x) {
+    return parseInt(x, 10)
+}
 
-    let ptr = 0
-    const len = data.length
-    while (ptr < len) {
-        const ln = getLine(data, ptr)
-        ptr += ln.length
+export function parseOBJ (raw:string, vp:string, fp:string) : Model {
+    const vertices:number[][] = []
+    const faces:number[][] = []
 
-        const [t, a, b, c] = ln.split(/\s+/)
-        switch (t) {
-            case OBJ_DATA_TYPE.COMMENT:
-                break
-
+    const lines = raw.split('\n')
+    for (let i = 0; i < lines.length; i++) {
+        const ln = lines[i].split(' ')
+        const type = ln.shift()
+        switch (type) {
             case OBJ_DATA_TYPE.VERTEX:
-                parsed[vp].push([+a, +b, +c])
+                vertices.push(ln.map(parseFloat))
                 break
-
             case OBJ_DATA_TYPE.FACE:
-                parsed[fp].push([+a, +b, +c])
+                faces.push(ln.map(toInt))
                 break
-
             default:
                 break
         }
     }
 
-    return parsed
+    return {
+        [vp]: vertices,
+        [fp]: faces,
+    }
 }
