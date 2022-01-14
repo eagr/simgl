@@ -11,3 +11,9 @@ export function join (arr:ArrayLike<any>, sep=',', transform=identity) : string 
     }
     return out.join(sep)
 }
+
+export function getLine (s:string, p:number) : string {
+    const eol = s.indexOf('\n', p)
+    const ln = s.substring(p, eol)
+    return ln
+}

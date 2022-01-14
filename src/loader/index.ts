@@ -1,8 +1,10 @@
 import { assert } from '../util/assert'
-import { parseObj } from './obj'
+import { parseOBJ } from './obj'
+import { parsePLY } from './ply'
 
 const parsers = {
-    '.obj': parseObj,
+    '.obj': parseOBJ,
+    '.ply': parsePLY,
 }
 
 function getExt (path:string) : string {
